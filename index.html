@@ -14,6 +14,8 @@
     <br>
     <button onclick="makeGreen()">Make Green</button>
     <button onclick="makeBlue()">Make Red</button>
+    <button id="make_yellow">Make Yellow</button>
+    <button id="btn_make_Aqua">Make Aqua</button>
     <script>
         function makeGreen(){
             document.body.style.backgroundColor ="green";
@@ -21,6 +23,12 @@
         function makeBlue(){
             document.body.style.backgroundColor ="blue";
         }
+        document.getElementById('make_yellow').addEventListener('click',function make_yellow(){
+            document.body.style.backgroundColor="yellow";
+        })
+        document.getElementById('btn_make_Aqua').addEventListener('click',function btn_make_aqua(btn_make_Aqua){
+            document.body.style.backgroundColor="aqua";
+        })
     </script>
     <script src="index.js"></script>
 </body>
