@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <style>
+        .comment{
+            border: 2px solid blue;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: Aqua;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>My Comment Box</h1>
+    <section>
+        <h3>All comments here</h3>
+        <di id="p">
+            <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptate!</p>
+            <p class="comment">Ipsum, expedita eum. Facere alias aperiam sapiente dolore corrupti quaerat?</p>
+            <p class="comment">Labore quia aliquam neque placeat dicta quasi velit repellendus doloremque.</p>
+        </div>
+        <form >
+            <textarea name="" id="comment" cols="20" rows="5"></textarea>
+            <br><br>
+            <button id="btn">Post</button>
+        </form>
+    </section>
+    <script src="comment.js"></script>
+    <script>
+        document.getElementById('btn').addEventListener("click", function () {
+    const commentBox = document.getElementById('comment');
+
+    // ✅ Get the value from input/textarea
+    const newcomment = commentBox.value;
+
+    // ✅ Get the container where comments will be added
+    const container = document.getElementById('p');
+
+    // ✅ Create a new paragraph
+    const commentp = document.createElement('p');
+    commentp.innerText = newcomment;
+
+    // ✅ Append new comment to the container
+    container.appendChild(commentp);
+
+   
+});
+
+    </script>
+</body>
+</html>
