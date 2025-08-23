@@ -11,10 +11,25 @@
 
     <p id="login">No USer</p>
     <button id="login-btn">Login</button>
+
+    <br>
+    <br>
+    <br>
+
+
+<p id="liam">No Name</p>
+    <input id="name" type="text" placeholder="Your Name">
+    <button id="btn">Update</button>
     <script>
-        document.getElementById("login-btn").addEventListener('click',function(){
-            const login = document.getElementById('login');
-            login.innerText = "Login Successful";
+        document.getElementById('btn').addEventListener('click', function(){
+            const name = document.getElementById('name');
+            console.log(name);
+            const liam = name.value;
+            console.log('name',liam);
+
+            const namep = document.getElementById('liam');
+            namep.innerText = liam;
+
         })
     </script>
     <script src="event.js"></script>
