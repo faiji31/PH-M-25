@@ -51,10 +51,13 @@
 
       // create the comment paragraph
       const commnetP = document.createElement('p');
-      commnet.innerText = newComment;
+      commnetP.classList.add('comment');
+      commnetP.innerText = newComment;
 
       // step-5 append the new tag to the parent element
       commentContainer.appendChild(commnetP);
+      // step-6 clear the text area
+      commentTextBox.value ='';
 
 
     })
