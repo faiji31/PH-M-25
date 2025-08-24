@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment Box</title>
-    <style>
-        .comment{
-            border: 2px solid blue;
-            margin: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: Aqua;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .comment{
+      border: 2px solid black;
+      padding: 10px;
+      margin: 10px;
+      background-color: aqua;
+      border-radius: 10px;
+    }
 
-        }
-    </style>
+  </style>
+  <title>comment With Event</title>
 </head>
 <body>
-    <h1>My Comment Box</h1>
-    <section>
-        <h3>All comments here</h3>
-        <di id="p">
-            <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, voluptate!</p>
-            <p class="comment">Ipsum, expedita eum. Facere alias aperiam sapiente dolore corrupti quaerat?</p>
-            <p class="comment">Labore quia aliquam neque placeat dicta quasi velit repellendus doloremque.</p>
-        </div>
-        <form >
-            <textarea name="" id="comment" cols="20" rows="5"></textarea>
-            <br><br>
-            <button id="btn">Post</button>
-        </form>
-    </section>
-    <script src="comment.js"></script>
-    <script>
-        document.getElementById('btn').addEventListener("click", function () {
-    const commentBox = document.getElementById('comment');
+  <h1>View Your commens</h1>
 
-    // ✅ Get the value from input/textarea
-    const newcomment = commentBox.value;
+  <section>
+    <h3>All Comments Here</h3>
+    <div id="comment-container">
+      <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, ipsa!</p>
+      <p class="comment">Assumenda quo nobis accusamus reprehenderit exercitationem aperiam numquam excepturi unde!</p>
+      <p class="comment" >Quas vitae quidem nulla rem? Ipsa maxime aliquam nihil ab!</p>
+    </div>
+    <br>
+    <br>
+    <textarea name="" id="comment-text-box" cols="60" rows="10"></textarea>
+<br>
+<br>
+<button id="btn">Post comment</button>
+  </section>
 
-    // ✅ Get the container where comments will be added
-    const container = document.getElementById('p');
 
-    // ✅ Create a new paragraph
-    const commentp = document.createElement('p');
-    commentp.innerText = newcomment;
 
-    // ✅ Append new comment to the container
-    container.appendChild(commentp);
+  <script>
+    //step-1-- set an event handler to the button
+    document.getElementById('btn').addEventListener("click",function(){
+      // step-2 get the text written in the comment text area
 
-   
-});
+      const commentTextBox = document.getElementById('comment-text-box');
 
-    </script>
+      const newComment = commentTextBox.value;
+
+
+      // step - 3 get the parent element
+      const commentContainer = document.getElementById("comment-container");
+
+
+      // create the comment paragraph
+      const commnetP = document.createElement('p');
+      commnet.innerText = newComment;
+
+      // step-5 append the new tag to the parent element
+      commentContainer.appendChild(commnetP);
+
+
+    })
+  </script>
 </body>
 </html>
