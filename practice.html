@@ -10,12 +10,14 @@
     <button id="btn-update-title">Update Title</button>
 
 
-    <h1>Login</h1>
+    <h1 id="h1">Login</h1>
     <button id="btn-login">Login</button>
 
     <script>
 document.getElementById('btn-login').addEventListener('click',function(){
-    console.log("button worked");
+    const h1updated = document.getElementById('h1');
+    h1updated.innerText = "logout";
+    
 })
     </script>
     
