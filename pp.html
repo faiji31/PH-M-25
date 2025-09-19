@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .comment{
-            border: 2px solid blue;
-            background-color: lightblue;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px;
-        }
-    </style>
-    <title>Create Comment box</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    .comment {
+      border: 2px solid blue;
+      background-color: lightblue;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+  <title>Create Comment Box</title>
 </head>
 <body>
-    <h1>My Awesome Comment Box</h1>
-    <section>
-        <p>All comments here...</p>
-        <div id="comment-container">
-            <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis ratione temporibus ea soluta possimus cupiditate ducimus reiciendis vitae, dolor provident voluptas assumenda necessitatibus totam alias natus vero iure? Iusto.</p>
-            <p class="comment">Nostrum quo et reiciendis soluta repellendus nihil sapiente, omnis minus veritatis vitae quisquam totam obcaecati consectetur tenetur ut eligendi dignissimos aliquid. Maxime optio temporibus dolorum consequatur autem accusantium dignissimos adipisci.</p>
-            <p class="comment">Qui, distinctio ullam! Voluptates adipisci itaque error et, cum possimus ea enim quis aut explicabo, alias repellendus. Expedita quisquam vel eius magni dolore saepe aperiam tempora nam accusantium consequatur? Quod.</p>
-        </div>
-        <form >
-            <textarea name="" id="comment-area" cols="40" rows="10"></textarea>
-            <br>
-            <button id="btn-post-comment">Post Comment</button>
-        </form>
-    </section>
-    <script>
-        document.getElementById('btn-post-comment').addEventListener('click',function(){
-          const textbox =  document.getElementById('comment-area')
-          const newComment = textbox.value;
+  <h1>My Awesome Comment Box</h1>
+  <section>
+    <p>All comments here...</p>
+    <div id="comment-container">
+      <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      <p class="comment">Nostrum quo et reiciendis soluta repellendus nihil sapiente.</p>
+      <p class="comment">Qui, distinctio ullam! Voluptates adipisci itaque error et.</p>
+    </div>
+    <form>
+      <textarea id="comment-area" cols="40" rows="10"></textarea>
+      <br>
+      <button id="btn-post-comment">Post Comment</button>
+    </form>
+  </section>
 
-          const commnetparent = document.getElementById('comment-container')
+  <script>
+    document.getElementById('btn-post-comment').addEventListener('click', function(e) {
+      // Prevent page reload on form submit
+      e.preventDefault();
 
-          const commentp = document.createElement('p')
-          commentp.classList.add("comment")
-          commentp.innerText =newComment;
+      const textbox = document.getElementById('comment-area');
+      const newComment = textbox.value.trim();
 
-          commnetparent.appendChild(commentp);
-                })
-    </script>
+     
+
+      const commentParent = document.getElementById('comment-container');
+
+      const commentP = document.createElement('p');
+      commentP.classList.add('comment');
+      commentP.innerText = newComment;
+
+      commentParent.appendChild(commentP);
+
+      textbox.value = ''; // clear textarea
+    });
+  </script>
 </body>
 </html>
