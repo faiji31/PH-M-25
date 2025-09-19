@@ -18,21 +18,30 @@
     <h1>My Awesome Comment Box</h1>
     <section>
         <p>All comments here...</p>
-        <div>
+        <div id="comment-container">
             <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis ratione temporibus ea soluta possimus cupiditate ducimus reiciendis vitae, dolor provident voluptas assumenda necessitatibus totam alias natus vero iure? Iusto.</p>
             <p class="comment">Nostrum quo et reiciendis soluta repellendus nihil sapiente, omnis minus veritatis vitae quisquam totam obcaecati consectetur tenetur ut eligendi dignissimos aliquid. Maxime optio temporibus dolorum consequatur autem accusantium dignissimos adipisci.</p>
             <p class="comment">Qui, distinctio ullam! Voluptates adipisci itaque error et, cum possimus ea enim quis aut explicabo, alias repellendus. Expedita quisquam vel eius magni dolore saepe aperiam tempora nam accusantium consequatur? Quod.</p>
         </div>
         <form >
-            <textarea name="" id="" cols="40" rows="10"></textarea>
+            <textarea name="" id="comment-area" cols="40" rows="10"></textarea>
             <br>
             <button id="btn-post-comment">Post Comment</button>
         </form>
     </section>
     <script>
         document.getElementById('btn-post-comment').addEventListener('click',function(){
-            console.log("clicked")
-        })
+          const textbox =  document.getElementById('comment-area')
+          const newComment = textbox.value;
+
+          const commnetparent = document.getElementById('comment-container')
+
+          const commentp = document.createElement('p')
+          commentp.classList.add("comment")
+          commentp.innerText =newComment;
+
+          commnetparent.appendChild(commentp);
+                })
     </script>
 </body>
 </html>
