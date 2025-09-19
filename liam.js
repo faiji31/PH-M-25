@@ -7,7 +7,9 @@ function makeBlue(){
     document.body.style.backgroundColor = 'blue';
 }
 
-const makeBlue = document.getElementById('btn-makeblue');
-makeBlue.onClick  = function Blue(){
-    document.body.style.backgroundColor = 'red';
-}
+// const makeBlue = document.getElementById('btn-makeblue');
+// makeBlue.onClick  = function Blue(){
+//     document.body.style.backgroundColor = 'red'
+// }
+
+
